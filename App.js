@@ -6,6 +6,8 @@ import { StyleSheet,
 import {createStackNavigator} from 'react-navigation-stack';
 import {createAppContainer} from 'react-navigation';
 
+import SignInScreen from './screens/SignInScreen';
+
 
 class HomeScreen extends Component {
 
@@ -19,7 +21,9 @@ class HomeScreen extends Component {
                         style={container}
                         source={require('././assets/image.png')}>
 
-                            <TouchableOpacity style={buttonStart}>
+                            <TouchableOpacity
+                                style={buttonStart}
+                                onPress={() => this.props.navigation.navigate('SignIn')}>
                                     <Text style={textButton}> Start </Text>
                             </TouchableOpacity>
 
@@ -35,7 +39,14 @@ const AppNavigator = createStackNavigator({
                 navigationOptions:{
                        header: null
                 }
-        }
+        },
+        SignIn: {
+                screen: SignInScreen,
+                navigationOptions:{
+                        title: 'Sign In'
+                },
+
+        },
 });
 
 
@@ -63,5 +74,5 @@ const styles = StyleSheet.create({
         },
 });
 
-export default createAppContainer(AppNavigator)
+export default createAppContainer(AppNavigator);
 

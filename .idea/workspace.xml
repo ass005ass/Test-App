@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c2b8485f-355c-4580-bc19-a1c6d0d2ef5f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/screens/SignInScreen.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screens/SinglInScreen.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,6 +86,8 @@
       <workItem from="1573197919582" duration="3497000" />
       <workItem from="1573208873189" duration="147000" />
       <workItem from="1573209569286" duration="4988000" />
+      <workItem from="1573221246786" duration="6966000" />
+      <workItem from="1573228605444" duration="1303000" />
     </task>
     <servers />
   </component>
@@ -116,10 +120,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="548" y="116" key="#com.intellij.ide.macro.MacrosDialog/0.0.1536.824@0.0.1536.824" timestamp="1572782019393" />
-    <state x="549" y="166" key="FileChooserDialogImpl" timestamp="1573211079081">
+    <state x="549" y="166" key="FileChooserDialogImpl" timestamp="1573229281090">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="166" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1573211079081" />
+    <state x="549" y="166" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1573229281090" />
     <state width="1515" height="238" key="GridCell.Tab.0.bottom" timestamp="1573059086000">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
