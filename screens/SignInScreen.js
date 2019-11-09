@@ -7,6 +7,8 @@ import {
     TextInput,
 } from 'react-native';
 
+import Main from '../App';
+
 export default function SignInScreen() {
 
     const { container, textButton, buttonStart, textInput, containerTextInput, } = styles;
@@ -25,7 +27,10 @@ export default function SignInScreen() {
                     placeholder= 'Password'/>
             </View>
 
-            <TouchableOpacity style={buttonStart}>
+            <TouchableOpacity
+                style={buttonStart}
+                onPress={() => this.props.navigation.navigate('Main')}>
+
                 <Text style={textButton}> Sign In </Text>
             </TouchableOpacity>
 

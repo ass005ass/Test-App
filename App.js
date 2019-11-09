@@ -7,6 +7,7 @@ import {createStackNavigator} from 'react-navigation-stack';
 import {createAppContainer} from 'react-navigation';
 
 import SignInScreen from './screens/SignInScreen';
+import TabNavigator from "./navigation/MainNavigator";
 
 
 class HomeScreen extends Component {
@@ -45,10 +46,11 @@ const AppNavigator = createStackNavigator({
                 navigationOptions:{
                         title: 'Sign In'
                 },
-
+        },
+        Main: {
+                screen: TabNavigator
         },
 });
-
 
 const styles = StyleSheet.create({
         container: {

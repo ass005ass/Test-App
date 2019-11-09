@@ -1,0 +1,10 @@
+import React from 'react';
+import { Text, View, } from 'react-native';
+
+export default function Tab_2Screen () {
+    return (
+        <View style={{flex:1, alignContent: 'centre', justifyContent: 'centre'}}>
+            <Text>Tab2!!!</Text>
+        </View>
+    )
+}
