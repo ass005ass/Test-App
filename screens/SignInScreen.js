@@ -7,36 +7,38 @@ import {
     TextInput,
 } from 'react-native';
 
-import Main from '../App';
 
-export default function SignInScreen() {
+export default class SignInScreen extends React.Component {
+    render() {
 
-    const { container, textButton, buttonStart, textInput, containerTextInput, } = styles;
 
-    return (
+        const {container, textButton, buttonStart, textInput, containerTextInput,} = styles;
 
-        <View style={container}>
+        return (
 
-            <View style={containerTextInput}>
-                <TextInput
-                    style={textInput}
-                    placeholder= 'Login'/>
+            <View style={container}>
 
-                <TextInput
-                    style={textInput}
-                    placeholder= 'Password'/>
+                <View style={containerTextInput}>
+                    <TextInput
+                        style={textInput}
+                        placeholder='Login'/>
+
+                    <TextInput
+                        style={textInput}
+                        placeholder='Password'/>
+                </View>
+
+                <TouchableOpacity
+                    style={buttonStart}
+                    onPress={() => this.props.navigation.navigate('Main')}>
+
+                    <Text style={textButton}> Sign In </Text>
+                </TouchableOpacity>
+
             </View>
 
-            <TouchableOpacity
-                style={buttonStart}
-                onPress={() => this.props.navigation.navigate('Main')}>
-
-                <Text style={textButton}> Sign In </Text>
-            </TouchableOpacity>
-
-        </View>
-
-    );
+        );
+    }
 }
 
 const styles = StyleSheet.create({
@@ -68,7 +70,7 @@ const styles = StyleSheet.create({
 
     },
 
-    textInput:{
+    textInput: {
         backgroundColor: '#fff',
         height: 50,
         marginBottom: 30,
