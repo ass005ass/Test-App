@@ -15,16 +15,26 @@ export default createAppContainer(createStackNavigator({
         SignIn: {
             screen: SignInScreen,
             navigationOptions: {
-                title: 'Sign In'
+                title: 'Sign In',
+
             },
         },
         Main: {
             screen: TabNavigator,
+
         },
 
     },
     {
         initialRoutName: 'StartScreen',
+        defaultNavigationOptions: {
+            headerStyle: {
+                backgroundColor: '#E5E5E5',
+                headerTitleStyle: {
+                    fontFamily: 'Roboto',
+                },
+            },
+        },
     },
     )
 );

@@ -51,8 +51,37 @@ const TabNavigator = createBottomTabNavigator({
         Tab_2Stack,
         Tab_3Stack,
         Tab_4Stack,
-    }
+    },
+    {
+        tabBarOptions: {
+            tabStyle: {
+                backgroundColor: '#E5E5E5',
+                paddingBottom: 15,
+                borderWidth: 1,
+                borderColor: '#C4C4C4',
+            },
+        },
+    },
 );
+
+TabNavigator.navigationOptions = ({navigation}) => {
+    const {routeName} = navigation.state.routes[navigation.state.index];
+    let headerTitle = routeName;
+
+    if (routeName === 'Tab_1Stack') {
+        headerTitle = 'TAB 1';
+    } else if (routeName === 'Tab_2Stack') {
+        headerTitle = 'TAB 2';
+    } else if (routeName === 'Tab_3Stack') {
+        headerTitle = 'TAB 3';
+    } else {
+        headerTitle = 'TAB 4';
+    }
+
+    return {
+        headerTitle,
+    };
+};
 
 
 export default TabNavigator;
