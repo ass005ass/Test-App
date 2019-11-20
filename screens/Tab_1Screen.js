@@ -2,6 +2,7 @@ import React from 'react';
 import { Text, View, StyleSheet } from 'react-native';
 import {Picker} from "native-base";
 
+
 export default class Tab_1Screen extends React.Component {
 
     static navigationOptions = {
@@ -9,7 +10,7 @@ export default class Tab_1Screen extends React.Component {
     };
 
     state = {
-        UserName: 'UserName',
+        UserName: '',
         selected: 'kay0',
     };
 
@@ -48,6 +49,8 @@ export default class Tab_1Screen extends React.Component {
         );
     }
 }
+
+
 
 const styles = StyleSheet.create({
     container: {

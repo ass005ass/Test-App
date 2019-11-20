@@ -17,6 +17,7 @@ export  default class StartScreen extends Component {
 
             <ImageBackground
                 style={container}
+                imageStyle={{opacity: 0.5}}
                 source={require('../assets/image.png')}>
 
                 <TouchableOpacity

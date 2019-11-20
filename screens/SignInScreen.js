@@ -9,28 +9,52 @@ import {
 
 
 export default class SignInScreen extends React.Component {
-    render() {
 
+    state = {
+        userLogin: '',
+        passTrue: 'false'
+    };
+
+    userPassword = (text) => {
+        if (text === '0000') {
+            this.setState({passTrue: 'true'})
+        } else {
+            this.setState({passTrue: 'false'})
+        }
+    };
+
+    nextScreen = () => {
+        if (this.state.passTrue === 'true') {
+           return  this.props.navigation.navigate('Main')
+        }else {
+            alert('Error: Invalid password.')
+        }
+    };
+
+    render() {
 
         const {container, textButton, buttonStart, textInput, containerTextInput,} = styles;
 
         return (
 
             <View style={container}>
-
                 <View style={containerTextInput}>
                     <TextInput
+                        onChangeText={login => this.setState({userLogin: login})}
                         style={textInput}
-                        placeholder='Login'/>
+                        placeholder='Login'
+                    />
 
                     <TextInput
+                        onChangeText={pass => this.userPassword(pass)}
                         style={textInput}
+                        secureTextEntry={true}
                         placeholder='Password'/>
                 </View>
 
                 <TouchableOpacity
                     style={buttonStart}
-                    onPress={() => this.props.navigation.navigate('Main')}>
+                    onPress={() => this.nextScreen()}>
 
                     <Text style={textButton}> Sign In </Text>
                 </TouchableOpacity>
