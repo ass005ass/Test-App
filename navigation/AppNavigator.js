@@ -28,11 +28,14 @@ export default createAppContainer(createStackNavigator({
     {
         initialRoutName: 'StartScreen',
         defaultNavigationOptions: {
+
             headerStyle: {
                 backgroundColor: '#E5E5E5',
-                headerTitleStyle: {
-                    fontFamily: 'Roboto',
-                },
+            },
+            headerTitleStyle: {
+                fontFamily: 'Roboto',
+                width: '65%',
+                textAlign: 'center',
             },
         },
     },

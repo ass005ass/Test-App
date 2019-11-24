@@ -5,15 +5,16 @@ import {
     TouchableOpacity,
     View,
     TextInput,
+   // AsyncStorage,
 } from 'react-native';
 
 
 export default class SignInScreen extends React.Component {
 
-    state = {
-        userLogin: '',
-        passTrue: 'false'
-    };
+   state = {
+            userLogin: '',
+            passTrue: 'false',
+        };
 
     userPassword = (text) => {
         if (text === '0000') {
@@ -25,8 +26,9 @@ export default class SignInScreen extends React.Component {
 
     nextScreen = () => {
         if (this.state.passTrue === 'true') {
-           return  this.props.navigation.navigate('Main')
-        }else {
+            return this.props.navigation.navigate('Main')
+        } else {
+            //console.log(getValue())
             alert('Error: Invalid password.')
         }
     };
@@ -38,6 +40,8 @@ export default class SignInScreen extends React.Component {
         return (
 
             <View style={container}>
+
+                <Text>{this.state.userLogin}</Text>
                 <View style={containerTextInput}>
                     <TextInput
                         onChangeText={login => this.setState({userLogin: login})}
@@ -64,6 +68,25 @@ export default class SignInScreen extends React.Component {
         );
     }
 }
+
+// let setValue = async () => {
+//     try {
+//         await AsyncStorage.setItem('name', 'my secret value')
+//     } catch(e) {
+//         // save error
+//     }
+//     console.log('Done.')
+// };
+//
+// let getValue = async () => {
+//     let value;
+//     try {
+//         value = await AsyncStorage.getItem('name')
+//     }catch (e) {
+//     }
+//     console.log(value)
+// };
+
 
 const styles = StyleSheet.create({
     container: {

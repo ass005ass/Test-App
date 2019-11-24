@@ -10,7 +10,7 @@ export default class Tab_1Screen extends React.Component {
     };
 
     state = {
-        UserName: '',
+        userName: '',
         selected: 'kay0',
     };
 
@@ -28,7 +28,7 @@ export default class Tab_1Screen extends React.Component {
 
             <View style={container}>
 
-                <Text style={styleText}> Привет,  {this.state.UserName} ! </Text>
+                <Text style={styleText}> Привет, {} ! </Text>
 
                 <View style={pickerStyle}>
 

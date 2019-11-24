@@ -50,6 +50,7 @@ const styles = StyleSheet.create({
         height: 50,
         width: '80%',
         borderRadius: 10,
+        opacity: 0.8,
     },
 
     textButton: {

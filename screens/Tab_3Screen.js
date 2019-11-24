@@ -45,8 +45,9 @@ const styles = StyleSheet.create({
         backgroundColor: 'blue',
         height: 50,
         width: '80%',
-        marginTop: 200,
+        marginTop: '15%',
         borderRadius: 10,
+        opacity: 0.8,
     },
 
     textButton: {
