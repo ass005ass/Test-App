@@ -16,7 +16,7 @@ export default class Tab_3Screen extends React.Component {
         super(props);
         this.state = {
             time: 'Set Time',
-            buttonClick: 'false',
+            timeNow: null,
         }
     }
 
@@ -25,15 +25,23 @@ export default class Tab_3Screen extends React.Component {
         let hours = nawTime.getHours();
         let minutes = nawTime.getMinutes();
         let second = nawTime.getSeconds();
+        if (hours < 10) {
+            hours = `0${nawTime.getHours()}`
+        }
+        if (minutes < 10) {
+            minutes = `0${nawTime.getMinutes}`
+        }
+        if (second < 10) {
+            second = `0${nawTime.getSeconds()}`
+        }
         return this.setState({time: `${hours}:${minutes}:${second}`});
     };
 
     timer = () => {
-        let timeNow = null;
         if (this.state.time === 'Set Time') {
-            timeNow = setInterval(this.startTimer, 1000)
-        }else  {
-            clearInterval(timeNow);
+            this.setState({timeNow: setInterval(this.startTimer, 1000)})
+        } else {
+            clearInterval(this.state.timeNow);
             this.setState({time: 'Set Time'});
         }
     };
@@ -58,7 +66,6 @@ export default class Tab_3Screen extends React.Component {
         );
     }
 }
-
 
 const styles = StyleSheet.create({
     container: {
