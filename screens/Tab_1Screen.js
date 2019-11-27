@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, StyleSheet } from 'react-native';
+import {Text, View, StyleSheet, AsyncStorage,} from 'react-native';
 import {Picker} from "native-base";
 
 
@@ -22,13 +22,15 @@ export default class Tab_1Screen extends React.Component {
 
     render() {
 
-        const { container, styleText, pickerStyle, } = styles;
+        AsyncStorage.getItem('login').then(value => this.setState({userName: value}));
+
+        const {container, styleText, pickerStyle,} = styles;
 
         return (
 
             <View style={container}>
 
-                <Text style={styleText}> Привет, {} ! </Text>
+                <Text style={styleText}> Привет, {this.state.userName} ! </Text>
 
                 <View style={pickerStyle}>
 
@@ -36,9 +38,9 @@ export default class Tab_1Screen extends React.Component {
                         selectedValue={this.state.selected}
                         onValueChange={this.onValueChange.bind(this)}>
 
-                        <Picker.Item label="Drop down list" value="kay0" />
-                        <Picker.Item label="state_1" value="kay01" />
-                        <Picker.Item label="state_2" value="kay02" />
+                        <Picker.Item label="Drop down list" value="kay0"/>
+                        <Picker.Item label="state_1" value="kay01"/>
+                        <Picker.Item label="state_2" value="kay02"/>
 
                     </Picker>
 
@@ -49,7 +51,6 @@ export default class Tab_1Screen extends React.Component {
         );
     }
 }
-
 
 
 const styles = StyleSheet.create({

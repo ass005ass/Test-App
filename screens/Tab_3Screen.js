@@ -9,8 +9,35 @@ import {
 export default class Tab_3Screen extends React.Component {
 
     static navigationOptions = {
-        header: null
+        header: null,
     };
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            time: 'Set Time',
+            buttonClick: 'false',
+        }
+    }
+
+    startTimer = () => {
+        let nawTime = new Date();
+        let hours = nawTime.getHours();
+        let minutes = nawTime.getMinutes();
+        let second = nawTime.getSeconds();
+        return this.setState({time: `${hours}:${minutes}:${second}`});
+    };
+
+    timer = () => {
+        let timeNow = null;
+        if (this.state.time === 'Set Time') {
+            timeNow = setInterval(this.startTimer, 1000)
+        }else  {
+            clearInterval(timeNow);
+            this.setState({time: 'Set Time'});
+        }
+    };
+
 
     render() {
 
@@ -20,8 +47,10 @@ export default class Tab_3Screen extends React.Component {
 
             <View style={container}>
 
-                <TouchableOpacity style={buttonStart}>
-                    <Text style={textButton}> Set Time </Text>
+                <TouchableOpacity
+                    onPress={this.timer}
+                    style={buttonStart}>
+                    <Text style={textButton}> {this.state.time} </Text>
                 </TouchableOpacity>
 
             </View>
