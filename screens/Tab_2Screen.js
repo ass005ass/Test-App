@@ -6,6 +6,8 @@ import {
     View,
     Image,
 } from 'react-native';
+import *as ImagePicker from "expo-image-picker";
+
 
 export default class Tab_2Screen extends React.Component {
 
@@ -13,8 +15,29 @@ export default class Tab_2Screen extends React.Component {
         header: null
     };
 
+    state ={
+        image: require('../assets/no_thumb.png')
+    };
+
+    pickImage = async () => {
+        let result = await ImagePicker.launchImageLibraryAsync({
+            mediaTypes: ImagePicker.MediaTypeOptions.Images,
+            allowsEditing: true,
+            aspect: [4, 3],
+            quality: 1
+        });
+
+        console.log(result);
+
+        if (!result.cancelled) {
+            this.setState({ image: result });
+        }
+    };
+
+
     render() {
 
+        let { image } = this.state;
         const {container, textButton, buttonStart, imageStyle} = styles;
 
         return (
@@ -22,9 +45,11 @@ export default class Tab_2Screen extends React.Component {
             <View style={container}>
                 <Image
                     style={imageStyle}
-                    source={require('../assets/no_thumb.png')}/>
+                    source={image}/>
 
-                <TouchableOpacity style={buttonStart}>
+                <TouchableOpacity
+                    onPress={this.pickImage}
+                    style={buttonStart}>
                     <Text style={textButton}> Upload Image </Text>
                 </TouchableOpacity>
 
